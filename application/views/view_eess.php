@@ -86,12 +86,15 @@ $(document).ready(function() {
                                 //echo $minutos;die();
                                 if($minutos<=15){
                                     $alerta = 'roja';
+                                    $tiempo = ': Menor a 15min';
                                 }
                                 if($minutos>15 && $minutos<=30){
                                     $alerta = 'amarilla';
+                                    $tiempo = ': Entre (15-30)min';
                                 }
                                 if($minutos>30){
                                     $alerta = 'azul';
+                                    $tiempo = ': Mayor a 30min';
                                 }
                                 
                                 
@@ -101,7 +104,7 @@ $(document).ready(function() {
                                 //<td><a target='_blank' href=$base_url>".$dato['estacion_servicio'].$minutos."</a></td>
                                 $fila.="
                                 <tr class='highlight'>
-                                <td><img title='".$alerta.$dato['id_historico_consumo']."' src='".$img."'/></td>
+                                <td><img title='".$alerta.$tiempo."' src='".$img."'/></td>
                                     <td title='".$dato['id_historico_consumo']."'>".$dato['estacion_servicio']."</td>
                                     <td>".$dato['placa']."</td>
                                     <td>".$dato['combustible']."</td>

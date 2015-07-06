@@ -181,8 +181,11 @@ ORDER BY
 		}
 $query->free_result();
 $db->close();
-                $this->view_data['datos'] = $datos;
-                $this->load->view('view_eess', $this->view_data);
+            $this->view_data['datos'] = $datos;
+            $this->view_data['view_name'] = "view_eess";
+            $this->view_data['menu'] = "sisccombf";
+            $this->load->view('output', $this->view_data);
+                
         }
         
 

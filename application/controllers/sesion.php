@@ -148,7 +148,7 @@ function verificar_usuario_i($indicador)
                 //$query_usuario = $this->db->get_where('usuario', array('indicador_usuario' => $user));
                 /***************************************************************************************/
                 $db=$this->load->database('siev',TRUE);
-                 $sql="SELECT usuario.id_usuario,usuario.indicador_usuario, usuario.nombre_usuario
+                 $sql="SELECT usuario.id_usuario,usuario.indicador_usuario, usuario.nombre_usuario, usuario.id_rol
                    FROM 
                     public.usuario
                   WHERE                     
@@ -167,14 +167,16 @@ function verificar_usuario_i($indicador)
                     {
                         $id_usuario = $row['id_usuario'];
                         $indicador_usuario = $row['indicador_usuario'];
-                        $nombre_usuario = $row['nombre_usuario'];                       
+                        $nombre_usuario = $row['nombre_usuario']; 
+                        $rol = explode("|", $row['id_rol']);
                     }
                     
                      if($id_usuario<>0){
                         $newdata = array(
                        'id_usuario'  => $id_usuario,
                        'indicador_usuario'  => $indicador_usuario,
-                       'nombre_usuario'  => $nombre_usuario
+                       'nombre_usuario'  => $nombre_usuario,
+                       'id_rol'  => $rol
                         );
 
                         if(!$auth_pdvsa){
