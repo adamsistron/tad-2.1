@@ -46,7 +46,7 @@
 <form class="" accept-charset="utf-8" method="post" action="<?php echo base_url('sesion/login')?>">
     <div class="form-group">
         <label for="usuario">Indicador</label>
-        <div class="input-group">
+        <div class="input-group col-lg-8">
             <span class="input-group-addon" id="basic-addon1">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     
@@ -56,7 +56,7 @@
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <div class="input-group">
+        <div class="input-group col-lg-8">
             <span class="input-group-addon" id="basic-addon2">
                 <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
                     

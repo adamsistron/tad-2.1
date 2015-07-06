@@ -16,7 +16,7 @@
 */
 $ip_servidor=$_SERVER["SERVER_NAME"];
 //Ruta WEB del proyecto
-$config['base_url']	= "http://$ip_servidor/ic/";
+$config['base_url']	= "http://$ip_servidor/tad/";
 
 /*
 |--------------------------------------------------------------------------

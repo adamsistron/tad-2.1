@@ -45,7 +45,8 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo site_url('')?>">TAD</a>
+            <a class="navbar-brand" href="<?php echo site_url('')?>">
+                <img style="width: 55%; margin: 0"alt="Brand" src="<?php echo base_url('images/pdvsa.ico');?>"></a>
           </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,6 +54,7 @@
       <ul class="nav navbar-nav">
 <!--        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
         <li id="scli"><a href="<?php echo site_url('scli/scli_1')?>">SCLi</a></li>
+        <li id="scli"><a href="<?php echo site_url('sisccombf/eess')?>">SISCCOMBF</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SIEV<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -74,8 +76,17 @@
             
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SERPCP<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li id="evento1"><a href="<?php echo site_url('serpcp/eventos_1')?>">Eventos por N/F/R</a></li>
+            <li id="evento3"><a href="<?php echo site_url('serpcp/eventos_3')?>">Eventos no deseados</a></li>
+    
+            
+          </ul>
+        </li>
         <!--<li id="usuarios"><a href="<?php echo site_url('#')?>">Usuarios</a></li>-->
-        <li id="scli"><a href="<?php echo site_url('serpcp/serpcp_1')?>">SERPCP</a></li>
+        <!--<li id="serpcp"><a href="<?php echo site_url('serpcp/eventos_1')?>">SERPCP</a></li>-->
       </ul>
         <ul class="nav navbar-nav navbar-right ">
             <li><button onclick="logout()" type="button" class="btn btn-danger navbar-btn">Salir(<?php echo $this->session->userdata('indicador_usuario');?>)</button></li>

@@ -81,6 +81,22 @@ $db['scli']['swap_pre'] = '';
 $db['scli']['autoinit'] = TRUE;
 $db['scli']['stricton'] = FALSE;
 
+$db['sisccombf']['hostname'] = '167.134.197.5';
+$db['sisccombf']['username'] = 'postgres';
+$db['sisccombf']['password'] = 'dwp9sql';
+$db['sisccombf']['database'] = 'dm_sisccombf';
+$db['sisccombf']['dbdriver'] = 'postgre';
+$db['sisccombf']['dbprefix'] = '';
+$db['sisccombf']['pconnect'] = TRUE;
+$db['sisccombf']['db_debug'] = TRUE;
+$db['sisccombf']['cache_on'] = FALSE;
+$db['sisccombf']['cachedir'] = '';
+$db['sisccombf']['char_set'] = 'utf8';
+$db['sisccombf']['dbcollat'] = 'utf8_general_ci';
+$db['sisccombf']['swap_pre'] = '';
+$db['sisccombf']['autoinit'] = TRUE;
+$db['sisccombf']['stricton'] = FALSE;
+
 $db['noapto']['hostname'] = '167.134.197.5';
 $db['noapto']['username'] = 'postgres';
 $db['noapto']['password'] = 'dwp9sql';
@@ -96,6 +112,22 @@ $db['noapto']['dbcollat'] = 'utf8_general_ci';
 $db['noapto']['swap_pre'] = '';
 $db['noapto']['autoinit'] = TRUE;
 $db['noapto']['stricton'] = FALSE;
+
+$db['serpcp']['hostname'] = '167.134.197.5';
+$db['serpcp']['username'] = 'postgres';
+$db['serpcp']['password'] = 'dwp9sql';
+$db['serpcp']['database'] = 'dm_serpcp';
+$db['serpcp']['dbdriver'] = 'postgre';
+$db['serpcp']['dbprefix'] = '';
+$db['serpcp']['pconnect'] = TRUE;
+$db['serpcp']['db_debug'] = TRUE;
+$db['serpcp']['cache_on'] = FALSE;
+$db['serpcp']['cachedir'] = '';
+$db['serpcp']['char_set'] = 'utf8';
+$db['serpcp']['dbcollat'] = 'utf8_general_ci';
+$db['serpcp']['swap_pre'] = '';
+$db['serpcp']['autoinit'] = TRUE;
+$db['serpcp']['stricton'] = FALSE;
 
 
 /* End of file database.php */
