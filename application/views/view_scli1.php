@@ -121,7 +121,7 @@ $(function () {
             }
         },
         title: {
-            text: 'Velocidad de Despachos',
+            text: 'Ritmo de Despachos',
             margin: 5,
             style: {
                     color: '#1F2B37',
@@ -732,16 +732,19 @@ function explicacion(chart){
 //AJAX DETALLE CHARTS
 function detalle(codigoo){  
 //alert(codigoo);
+var planta= $('#planta').val();
         if(codigoo!=0){
                   $.ajax({
-                          url:"<?php echo base_url('scli/detalle_despacho');?>/"+codigoo,
+                          url:"<?php echo base_url('scli/detalle_despacho');?>/"+codigoo+"/"+planta,
                           type: "POST",
                           data:{codigoo:codigoo},
                           success: function(html) {
                             //alert(chart + html);
                             $("#detalle_avance").empty();
                             $("#detalle_avance").append(html);            
-                            $("#detalle_avance").dialog( "open" );
+                            //$("#detalle_avance").dialog( "open" );
+                            $(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
+                            
                           }
                         });
 
@@ -755,10 +758,16 @@ function detalle(codigoo){
 $(function () {
     setInterval(function () {
        planta();
-    }, 180000);   
+    }, 180000);  
+    
+    $(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
 
 });
                 </script>
+                
+                <link rel="stylesheet" href="<?php echo base_url('css/colorbox.css');?>" />
+
+    <script src="<?php echo base_url('js/jquery.colorbox.js');?>"></script>
 	</head>
 	<body>
                 <script type="text/javascript" src="<?php echo base_url('Highcharts-4.0.4/js/highcharts.js');?>"></script>

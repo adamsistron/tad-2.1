@@ -180,7 +180,7 @@ function verificar_usuario_i($indicador)
                         );
 
                         if(!$auth_pdvsa){
-                            echo "<script>alert('Indicador y/o Contraseña Incorrecta')</script>";
+                            echo "<meta charset='utf-8'><script>alert('Indicador y/o Contraseña Incorrecta')</script>";
                             redirect('/', 'refresh');
                         }else{
                             $this->session->set_userdata($newdata);
@@ -192,7 +192,7 @@ function verificar_usuario_i($indicador)
                         } 
                          
                      }else{                        
-                        echo "<script>alert('Indicador NO Registrado en el Sistema')</script>";
+                        echo "<meta charset='utf-8'><script>alert('Indicador NO Registrado en el Sistema')</script>";
                         redirect(base_url(''), 'refresh');
                      }
 

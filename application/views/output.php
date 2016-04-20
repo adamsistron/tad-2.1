@@ -28,13 +28,21 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
     <![endif]-->
-    <?php
-    if(!isset($view_name)) {
-        $jquery = base_url('js/jquery.min_1.js');
+    
+    <link rel="stylesheet" href="<?php echo base_url('css/colorbox.css');?>" />
+<?php
+if(!isset($view_name)) {
+    $jquery = base_url('js/jquery.min_1.js');
     echo "<script src='".$jquery."'></script>";
-        }
-        ?>
-  </head>
+}
+?>
+    <script src="<?php echo base_url('js/jquery.colorbox.js');?>"></script>
+    <script>
+    $(document).ready(function(){
+        $(".iframe").colorbox({iframe:true, width:"90%", height:"90%"});
+    });
+    </script>
+    
   <body>
       <nav class="navbar navbar-default">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -55,7 +63,16 @@
       <ul class="nav navbar-nav">
 <!--        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
         <?php if (in_array("1", $rol)) {?>
-        <li id="scli"><a href="<?php echo site_url('scli/scli_1')?>">SCLi</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">SCLi<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            
+            <li id="scli1"><a onclick="load('consulta_despachos/general')">General</a></li>
+            <li id="scli2"><a onclick="load('scli/scli_1')">TM Despachos</a></li>
+            <li id="scli3"><a onclick="load('consulta_despachos')">SIE-MENA</a></li>
+            
+          </ul>
+        </li>
         <?php }?>
         <?php if (in_array("2", $rol)) {?>
         <li id="sisccombf"><a href="<?php echo site_url('sisccombf/eess')?>">SISCCOMBF</a></li>
@@ -95,15 +112,13 @@
         <ul class="nav navbar-nav navbar-right ">
             <li><button onclick="logout()" type="button" class="btn btn-danger navbar-btn">Salir(<?php echo $this->session->userdata('indicador_usuario');?>)</button></li>
       </ul>
+        
+
     </div><!-- /.navbar-collapse -->
            </nav>
 
-      <div class="container-fluid" style="height: complex">
-        <?php 
-        if(isset($view_name)) {
-        $this->load->view($view_name);
-        }?>
-        
+      <div class="container-fluid" id="maincontainer" style="height: complex">
+<p><a class='iframe' href="<?php echo site_url('scli/scli_1')?>">Outside Webpage (Iframe)</a></p>
       </div>
 
     </div><!-- /.container -->
@@ -119,13 +134,8 @@
     
     
     <script>
-        <?php if(isset($menu)) {
-            echo "$('#$menu').addClass('active')";
-        }?>
-        
-        function logout(){
-        window.location.href = "<?php echo base_url('sesion/logout');?>";
-    }
+        function logout(){window.location.href = "<?php echo base_url('sesion/logout');?>";}
+        function load(url){var ruta = '<?php echo site_url('')?>'+url;$("#maincontainer").empty();$("#maincontainer").load(ruta);}
         </script>
   </body>
 </html>
